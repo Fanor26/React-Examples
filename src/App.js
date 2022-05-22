@@ -1,5 +1,6 @@
 
 import Time from "./Example1/Time"
+import CounterComponent from "./Example2/Counter";
 import './App.css';
 
 
@@ -9,6 +10,7 @@ function App() {
         <div className="App">
 
         <Time/>
+            <CounterComponent initialValue="100" limiValue="1000"/>
         </div>
     );
 }
