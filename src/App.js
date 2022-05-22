@@ -1,7 +1,7 @@
 
 import Time from "./Example1/Time"
 import CounterComponent from "./Example2/Counter";
-import './App.css';
+import './App.scss';
 
 
 function App() {
