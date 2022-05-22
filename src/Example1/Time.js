@@ -6,7 +6,7 @@ function getTime(){
 }
 
 function Time(){
-    const [time,setTime]= useState(getTime());
+    const [time, setTime]= useState(getTime());
     setInterval(()=>{
         setTime(getTime())
 
