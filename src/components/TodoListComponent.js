@@ -1,10 +1,18 @@
 import React from 'react';
+import TaskComponent from "./TaskComponent";
 
-const TodoListComponent = () => {
+const TodoListComponent = ({list}) => {
+    list.map(item => {
+        console.log("item -> :", item)
+
+        }
+
+    )
     return (
-        <div>
-        TodoListComponent
-        </div>
+        <ul className="listContainer">
+            {list.map(item =><TaskComponent tasks={item}/>)}
+
+        </ul>
     );
 };
 
