@@ -1,6 +1,6 @@
 import TaskComponent from "./TaskComponent";
 
-const TodoListComponent = ({ list, deleteTaskHander }) => {
+const TodoListComponent = ({ list, deleteTaskHander, updateTaskHandler }) => {
   return (
     <div className="listContainer">
       {list.map((item) => (
@@ -8,6 +8,7 @@ const TodoListComponent = ({ list, deleteTaskHander }) => {
           key={item.id}
           tasks={item}
           deleteTaskHander={deleteTaskHander}
+          updateTaskHandler={updateTaskHandler}
         />
       ))}
     </div>
