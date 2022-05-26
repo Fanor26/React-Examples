@@ -1,14 +1,16 @@
 import useForm from "../hooks/useForm";
+import TaskModel from "../models/TaskModel";
 
-const InputComponent = ({handlerNewTask}) => {
+const InputComponent = ({ newTaskHandler }) => {
   const [form, handlerChangeForm, handlerResetForm] = useForm({ taskname: "" });
-  const {taskname} = form;
-
+  const { taskname } = form;
   const handlerSubmit = (e) => {
     e.preventDefault();
-
     handlerResetForm();
-      handlerNewTask(taskname)
+    if (taskname !== "") {
+      const taskModel = new TaskModel(taskname);
+      newTaskHandler(taskModel);
+    }
   };
   return (
     <div>
@@ -18,13 +20,11 @@ const InputComponent = ({handlerNewTask}) => {
           name="taskname"
           onChange={handlerChangeForm}
           value={taskname}
-          placeholder="Write some task"
+          placeholder="write some task"
         />
-        <input className="submitButton" type="submit" value="Create Task" />
+        <input className="submitButton" type="submit" value="create task" />
       </form>
-      <div>{taskname}</div>
     </div>
   );
 };
-
 export default InputComponent;

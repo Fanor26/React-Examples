@@ -1,19 +1,16 @@
-import React from 'react';
 import TaskComponent from "./TaskComponent";
 
-const TodoListComponent = ({list}) => {
-    list.map(item => {
-        console.log("item -> :", item)
-
-        }
-
-    )
-    return (
-        <ul className="listContainer">
-            {list.map(item =><TaskComponent tasks={item}/>)}
-
-        </ul>
-    );
+const TodoListComponent = ({ list, deleteTaskHander }) => {
+  return (
+    <div className="listContainer">
+      {list.map((item) => (
+        <TaskComponent
+          key={item.id}
+          tasks={item}
+          deleteTaskHander={deleteTaskHander}
+        />
+      ))}
+    </div>
+  );
 };
-
 export default TodoListComponent;
