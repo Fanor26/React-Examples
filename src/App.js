@@ -12,6 +12,7 @@ const getStore = () => {
    return JSON.parse(localStorage.getItem('listTask'));
 }
 function App() {
+    console.log("call App");
   let [listTask, setListTask] = useState(getStore());
   const newTaskHandler = (task) => {
     listTask = [...listTask, task];
